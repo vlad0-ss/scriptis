@@ -41,7 +41,7 @@ function Module.Freeze(Part: Part)
     if (typeof(Part) == "Instance") then Part = {Part}; end;
     StampAsset:InvokeServer(
         56447956,
-        LPlate.CFrame - Vector3.new(0, 5, 0),
+        Part.CFrame,
         "{3ee17b14-c66d-4cdd-8500-3782d1dceab5}",
         Part,
         0
