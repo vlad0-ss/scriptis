@@ -129,6 +129,12 @@ function Module.DestroyAura(Radius: number)
     Blacklist = nil;
 end;
 
+function Module.Lag()    
+    for i=1, 50 do
+        Module.CreateMSpike(CFrame.new(math.random(-225, 255), 15, math.random(-225, 255)));
+    end;
+end;
+
 UserInputService.InputBegan:Connect(function(InputObject, Proccessed)
     if (Proccessed) then return; end;
     if (InputObject.KeyCode == Enum.KeyCode.F) then
@@ -137,6 +143,8 @@ UserInputService.InputBegan:Connect(function(InputObject, Proccessed)
         Module.Kill(Mouse.Target);
     elseif (InputObject.KeyCode == Enum.KeyCode.H) then
         Module.DestroyAura(20);
+    elseif (InputObject.KeyCode == Enum.KeyCode.J) then
+        Module.Lag();
     elseif (InputObject.KeyCode == Enum.KeyCode.T) then
         Aura:Destroy();
         Aura = nil;
