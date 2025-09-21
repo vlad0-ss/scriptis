@@ -43,14 +43,14 @@ function Module.Freeze(Part: Part)
         56447956,
         Part.CFrame,
         "{3ee17b14-c66d-4cdd-8500-3782d1dceab5}",
-        Part,
+        {Part, LPlate},
         0
     );
 end;
 
 function Module.Weld(...)
     StampAsset:InvokeServer(
-        56453053,
+        41324904,
         LPlate.CFrame + Vector3.new(0, 200, 0),
         "{3ae31e60-5cd0-4d80-96b6-a1dd894ece8a}",
         {...},
@@ -70,9 +70,9 @@ function Module.Kill(Player)
     if (Player:IsA("Player")) then Player = Player.Character.PrimaryPart; end;
     StampAsset:InvokeServer(
         56447956,
-        LPlate.CFrame - Vector3.new(0, 1e100, 0),
+        LPlate.CFrame - Vector3.new(0, 9e9, 0),
         "{99ab22df-ca29-4143-a2fd-0a1b79db78c2}",
-        {Player},
+        {Player, LPlate},
         0
     );
 end;
