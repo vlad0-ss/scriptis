@@ -135,6 +135,12 @@ function Module.Lag()
     end;
 end;
 
+function Module.SpikeGrind()
+    for i,v in pairs(game.Players:getChildren()) do
+        Module.CreateSpike(v.Character.HumanoidRootPart.CFrame, {v.Character.HumanoidRootPart});
+    end;
+end;
+
 UserInputService.InputBegan:Connect(function(InputObject, Proccessed)
     if (Proccessed) then return; end;
     if (InputObject.KeyCode == Enum.KeyCode.F) then
@@ -146,7 +152,7 @@ UserInputService.InputBegan:Connect(function(InputObject, Proccessed)
     elseif (InputObject.KeyCode == Enum.KeyCode.J) then
         Module.Lag();
     elseif (InputObject.KeyCode == Enum.KeyCode.L) then
-        Module.Delete(Mouse.Target);
+        Module.SpikeGrind();
     elseif (InputObject.KeyCode == Enum.KeyCode.T) then
         Aura:Destroy();
         Aura = nil;
