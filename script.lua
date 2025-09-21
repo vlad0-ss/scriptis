@@ -41,7 +41,7 @@ function Module.Freeze(Part: Part)
     if (typeof(Part) == "Instance") then Part = {Part}; end;
     StampAsset:InvokeServer(
         56447956,
-        Part.Position,
+        CFrame.new(Part.Position),
         "{3ee17b14-c66d-4cdd-8500-3782d1dceab5}",
         Part,
         0
@@ -69,8 +69,8 @@ end;
 function Module.Kill(Player)
     if (Player:IsA("Player")) then Player = Player.Character.PrimaryPart; end;
     StampAsset:InvokeServer(
-        41324885,
-        LPlate.CFrame - Vector3.new(0, 9e9, 0),
+        56447956,
+        LPlate.CFrame - Vector3.new(0, 1e100, 0),
         "{99ab22df-ca29-4143-a2fd-0a1b79db78c2}",
         {Player},
         0
@@ -130,8 +130,8 @@ function Module.DestroyAura(Radius: number)
 end;
 
 function Module.Lag()    
-    for i=1,100 do
-        Module.CreateSpike( CFrame.new( math.random(-30, 30), 30, math.random(-30, 30) ) {LPlayer.Character.HumanoidRootPart});
+    for i,v in pairs(game.Players:GetChildren()) do
+        Module.Hang(v.Character.HumanoidRootPart);
     end;
 end;
 
@@ -145,6 +145,8 @@ UserInputService.InputBegan:Connect(function(InputObject, Proccessed)
         Module.DestroyAura(20);
     elseif (InputObject.KeyCode == Enum.KeyCode.J) then
         Module.Lag();
+    elseif (InputObject.KeyCode == Enum.KeyCode.L) then
+        Module.Delete(Mouse.Target);
     elseif (InputObject.KeyCode == Enum.KeyCode.T) then
         Aura:Destroy();
         Aura = nil;
