@@ -130,8 +130,8 @@ function Module.DestroyAura(Radius: number)
 end;
 
 function Module.Lag()    
-    for i=1, 50 do
-        Module.CreateMSpike(CFrame.new(math.random(-225, 255), 32, math.random(-225, 255)), {LPlayer.Character.HumanoidRootPart});
+    for i=1,500 do
+        Module.CreateSpike(CFrame.new(math.random(-225, 255), 32, math.random(-225, 255)), {LPlayer.Character.HumanoidRootPart});
     end;
 end;
 
