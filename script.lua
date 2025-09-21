@@ -77,6 +77,18 @@ function Module.Kill(Player)
     );
 end;
 
+function Module.KillSpike(Player)
+    StampAsset:InvokeServer(
+        56447956,
+        LPlate.CFrame + Vector3.new(0, 10, 0),
+        "{99ab22df-ca29-4143-a2fd-0a1b79db78c2}",
+        {Player},
+        0
+    );
+    StampAsset:InvokeServer(41324903, LPlate.CFrame + Vector3.new(0, 10, 0),, "{bf0c5c8b-6f25-4321-9251-300beb818121}", {}, 0);
+    
+end;
+
 function Module.Fling(Player)
     if (Player:IsA("Player")) then Player = Player.Character.PrimaryPart; end;
     StampAsset:InvokeServer(
@@ -137,7 +149,7 @@ end;
 
 function Module.SpikeGrind()
     for i,v in pairs(game.Players:getChildren()) do
-        Module.CreateSpike(v.Character.HumanoidRootPart.CFrame, {v.Character.HumanoidRootPart});
+        Module.KillSpike(v.Character.HumanoidRootPart);
     end;
 end;
 
