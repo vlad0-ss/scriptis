@@ -131,7 +131,7 @@ end;
 
 function Module.Lag()    
     for i=1,500 do
-        StampAsset:InvokeServer(41324903, CFrame.new(math.random(-30,30) 30, math.random(-30,30)), "{bf0c5c8b-6f25-4321-9251-300beb818121}", {LPlayer.Character.HumanoidRootPart}, 0);
+        StampAsset:InvokeServer( 41324903, CFrame.new( math.random(-30,30), 30, math.random(-30,30) ), "{bf0c5c8b-6f25-4321-9251-300beb818121}", {LPlayer.Character.HumanoidRootPart}, 0 );
     end;
 end;
 
