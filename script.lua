@@ -131,7 +131,7 @@ end;
 
 function Module.Lag()    
     for i=1, 50 do
-        Module.CreateMSpike(CFrame.new(math.random(-225, 255), 50, math.random(-225, 255)), {LPlate});
+        Module.CreateMSpike(CFrame.new(math.random(-225, 255), 32, math.random(-225, 255)), {LPlayer.Character.HumanoidRootPart});
     end;
 end;
 
