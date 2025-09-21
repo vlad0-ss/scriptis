@@ -63,13 +63,13 @@ function Module.CreateSpike(CF: CFrame, Weld: table)
 end;
 
 function Module.CreateMSpike(CF: CFrame, Weld: table)
-    return StampAsset:InvokeServer(41324903, CF, "{fca81e11-1ead-4817-afde-4dc29e72ea1b}", Weld or {}, 0);
+    return StampAsset:InvokeServer(41324904, CF, "{fca81e11-1ead-4817-afde-4dc29e72ea1b}", Weld or {}, 0);
 end;
 
 function Module.Kill(Player)
     if (Player:IsA("Player")) then Player = Player.Character.PrimaryPart; end;
     StampAsset:InvokeServer(
-        56447956,
+        41324885,
         LPlate.CFrame - Vector3.new(0, 9e9, 0),
         "{99ab22df-ca29-4143-a2fd-0a1b79db78c2}",
         {Player},
