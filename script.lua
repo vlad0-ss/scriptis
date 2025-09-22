@@ -149,13 +149,13 @@ end;
 
 function Module.SpikeGrind()
     for i=1,50 do
-        StampAsset:InvokeServer(41324903, LPlate.CFrame + Vector3.new(math.random(-10,10), 10, math.random(-10,10)), "{bf0c5c8b-6f25-4321-9251-300beb818121}", {}, 0);
+        StampAsset:InvokeServer(41324903, LPlate.CFrame + Vector3.new(math.random(-30,30), 10, math.random(-30,30)), "{bf0c5c8b-6f25-4321-9251-300beb818121}", {}, 0);
     end;
 end;
 
 function Module.SteepleGrind()
     for i=1,50 do
-        StampAsset:InvokeServer(56448122, LPlate.CFrame + Vector3.new(math.random(-10,10), 10, math.random(-10,10)), "{bf0c5c8b-6f25-4321-9251-300beb818121}", {}, 0);
+        StampAsset:InvokeServer(56448122, LPlate.CFrame + Vector3.new(math.random(-30,30), 10, math.random(-30,30)), "{bf0c5c8b-6f25-4321-9251-300beb818121}", {}, 0);
     end;
 end;
 
