@@ -1,5 +1,3 @@
-local AdminList = "efrefeds", "tertthfhttyr";
-
 Instance.new("Hint", Workspace).Text = "KEYBINDS: Y - KILL MOUSE TARGET, H - ACTIVATE AURA, T - DELETE AURA, J - KILL ALL, L - SPAWN 50 SPIKES, P - SPAWN 50 STEEPLES, M - CRASH";
 --//Services\\--
 local ReplicatedStorage = game:GetService("ReplicatedStorage");
