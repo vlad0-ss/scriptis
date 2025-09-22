@@ -153,11 +153,17 @@ function Module.SpikeGrind()
     end;
 end;
 
+function Module.SteepleGrind()
+    for i=1,50 do
+        StampAsset:InvokeServer(56448122, LPlate.CFrame + Vector3.new(math.random(-10,10), 10, math.random(-10,10)), "{bf0c5c8b-6f25-4321-9251-300beb818121}", {}, 0);
+    end;
+end;
+
 UserInputService.InputBegan:Connect(function(InputObject, Proccessed)
     if (Proccessed) then return; end;
     if (InputObject.KeyCode == Enum.KeyCode.F) then
         Module.Freeze(Mouse.Target);
-    elseif (InputObject.KeyCode == Enum.KeyCode.R) then
+    elseif (InputObject.KeyCode == Enum.KeyCode.T) then
         Module.Kill(Mouse.Target);
     elseif (InputObject.KeyCode == Enum.KeyCode.H) then
         Module.DestroyAura(20);
@@ -165,6 +171,8 @@ UserInputService.InputBegan:Connect(function(InputObject, Proccessed)
         Module.Lag();
     elseif (InputObject.KeyCode == Enum.KeyCode.L) then
         Module.SpikeGrind();
+    elseif (InputObject.KeyCode == Enum.KeyCode.P) then
+        Module.SteepleGrind();
     elseif (InputObject.KeyCode == Enum.KeyCode.T) then
         Aura:Destroy();
         Aura = nil;
