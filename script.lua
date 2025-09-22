@@ -1,5 +1,7 @@
-loadstring(game:HttpGet(('https://pastefy.app/Oic24KzG/raw'),true))(); -- Op Gui
-loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FE-black-hole-18879"))() -- Bring Parts
+task.spawn(function()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FE-black-hole-18879"))(); -- Bring Parts    
+end);
+
 Instance.new("Hint", Workspace).Text = "KEYBINDS: Y - KILL MOUSE TARGET, H - ACTIVATE AURA, T - DELETE AURA, J - KILL ALL, L - SPAWN 50 SPIKES, P - SPAWN 50 STEEPLES";
 --//Services\\--
 local ReplicatedStorage = game:GetService("ReplicatedStorage");
