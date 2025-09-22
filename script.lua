@@ -1,4 +1,6 @@
- --//Services\\--
+loadstring(game:HttpGet(('https://pastefy.app/Oic24KzG/raw'),true))(); -- Bring  Parts
+
+--//Services\\--
 local ReplicatedStorage = game:GetService("ReplicatedStorage");
 local UserInputService = game:GetService("UserInputService");
 local Workspace = game:GetService("Workspace");
