@@ -1,4 +1,4 @@
-Instance.new("Hint", Workspace).Text = "KEYBINDS: Y - KILL MOUSE TARGET, H - ACTIVATE AURA, T - DELETE AURA, J - KILL ALL, L - SPAWN 50 SPIKES, P - SPAWN 50 STEEPLES, M - CRASH (upd)";
+Instance.new("Hint", Workspace).Text = "KEYBINDS: Y - KILL MOUSE TARGET, H - ACTIVATE AURA, T - DELETE AURA, J - KILL ALL, L - SPAWN 50 SPIKES, P - SPAWN 50 STEEPLES, M - CRASH, O - SPIKE (upd)";
 --//Services\\--
 local ReplicatedStorage = game:GetService("ReplicatedStorage");
 local UserInputService = game:GetService("UserInputService");
