@@ -1,4 +1,4 @@
---//Services\\--
+ --//Services\\--
 local ReplicatedStorage = game:GetService("ReplicatedStorage");
 local UserInputService = game:GetService("UserInputService");
 local Workspace = game:GetService("Workspace");
@@ -163,7 +163,7 @@ UserInputService.InputBegan:Connect(function(InputObject, Proccessed)
     if (Proccessed) then return; end;
     if (InputObject.KeyCode == Enum.KeyCode.F) then
         Module.Freeze(Mouse.Target);
-    elseif (InputObject.KeyCode == Enum.KeyCode.T) then
+    elseif (InputObject.KeyCode == Enum.KeyCode.Y) then
         Module.Kill(Mouse.Target);
     elseif (InputObject.KeyCode == Enum.KeyCode.H) then
         Module.DestroyAura(20);
