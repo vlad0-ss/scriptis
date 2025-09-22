@@ -149,7 +149,7 @@ end;
 
 function Module.SpikeGrind()
     for i=1,50 do
-        Module.CreateSpike( LPlate.CFrame + Vector3.new(0, 50, 0), {} );
+        StampAsset:InvokeServer(41324903, LPlate.CFrame + Vector3.new(0, 10, 0), "{bf0c5c8b-6f25-4321-9251-300beb818121}", {}, 0);
     end;
 end;
 
