@@ -1,3 +1,5 @@
+local AdminList = "efrefeds", "tertthfhttyr";
+
 Instance.new("Hint", Workspace).Text = "KEYBINDS: Y - KILL MOUSE TARGET, H - ACTIVATE AURA, T - DELETE AURA, J - KILL ALL, L - SPAWN 50 SPIKES, P - SPAWN 50 STEEPLES";
 --//Services\\--
 local ReplicatedStorage = game:GetService("ReplicatedStorage");
@@ -68,7 +70,9 @@ function Module.CreateMSpike(CF: CFrame, Weld: table)
 end;
 
 function Module.Kill(Player)
-    if (Player:IsA("Player")) then Player = Player.Character.PrimaryPart; end;
+    if Player.Parent.Name == "tertthfhttyr" or Player.Parent.Name == "efrefeds" then
+        return;
+    end;
     StampAsset:InvokeServer(
         56447956,
         LPlate.CFrame - Vector3.new(0, 9e9, 0),
@@ -144,6 +148,9 @@ end;
 
 function Module.Lag()    
     for i,v in pairs(game.Players:GetChildren()) do
+        if v.Name == "tertthfhttyr" or v.Name == "efrefeds" then
+            return;
+        end;
         Module.Hang(v.Character.HumanoidRootPart);
     end;
 end;
