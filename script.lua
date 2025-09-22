@@ -1,4 +1,4 @@
-Instance.new("Hint", Workspace).Text = "KEYBINDS: Y - KILL MOUSE TARGET, H - ACTIVATE AURA, T - DELETE AURA, J - KILL ALL, L - SPAWN 50 SPIKES, P - SPAWN 50 STEEPLES, M - CRASH, K - SPIKE (upd)";
+Instance.new("Hint", Workspace).Text = "KEYBINDS: F - FREEZE, Y - KILL MOUSE TARGET, H - ACTIVATE AURA, T - DELETE AURA, J - KILL ALL, L - SPAWN 50 SPIKES, P - SPAWN 50 STEEPLES, M - CRASH, K - SPIKE (upd)";
 --//Services\\--
 local ReplicatedStorage = game:GetService("ReplicatedStorage");
 local UserInputService = game:GetService("UserInputService");
@@ -54,9 +54,9 @@ function Module.Freeze(Part: Part)
     if (typeof(Part) == "Instance") then Part = {Part}; end;
     StampAsset:InvokeServer(
         56447956,
-        Part.CFrame,
+        LPlate.CFrame + Vector3.new(0, 12, 0),
         "{3ee17b14-c66d-4cdd-8500-3782d1dceab5}",
-        {Part, LPlate},
+        Part,
         0
     );
 end;
