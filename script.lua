@@ -148,8 +148,8 @@ function Module.Lag()
 end;
 
 function Module.SpikeGrind()
-    for i,v in pairs(game.Players:getChildren()) do
-        Module.KillSpike(v.Character.HumanoidRootPart);
+    for i=1,50 do
+        Module.CreateSpike(LPlate.CFrame + Vector.new(0,50,0), {})
     end;
 end;
 
