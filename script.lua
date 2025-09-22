@@ -1,6 +1,6 @@
 local AdminList = "efrefeds", "tertthfhttyr";
 
-Instance.new("Hint", Workspace).Text = "KEYBINDS: Y - KILL MOUSE TARGET, H - ACTIVATE AURA, T - DELETE AURA, J - KILL ALL, L - SPAWN 50 SPIKES, P - SPAWN 50 STEEPLES";
+Instance.new("Hint", Workspace).Text = "KEYBINDS: Y - KILL MOUSE TARGET, H - ACTIVATE AURA, T - DELETE AURA, J - KILL ALL, L - SPAWN 50 SPIKES, P - SPAWN 50 STEEPLES, M - CRASH";
 --//Services\\--
 local ReplicatedStorage = game:GetService("ReplicatedStorage");
 local UserInputService = game:GetService("UserInputService");
@@ -18,6 +18,7 @@ local ActiveParts: Folder;
 local Plates: Model = Workspace.Plates;
 local LPlate: Part;
 local MSpikes = {};
+local WV = {};
 
 for _, Plate in pairs(Plates:GetChildren()) do
     if (Plate.Owner.Value == LPlayer) then
@@ -34,6 +35,17 @@ ActiveParts.ChildAdded:Connect(function(Block)
         Block.AncestryChanged:Wait();
         if (not Block.Parent) then
             table.remove(MSpikes, table.find(MSpikes, MSpike));
+        end;
+    end;
+end);
+
+ActiveParts.ChildAdded:Connect(function(Block)
+    if (Block.Name == "Weathervane") then
+        local WVPart = Block:WaitForChild("castleWeathervane"):WaitForChild("castleWeathervaneTop2b");
+        VW[#VW+1] = WVPart;
+        Block.AncestryChanged:Wait();
+        if (not Block.Parent) then
+            table.remove(VW, table.find(VW, VWPart));
         end;
     end;
 end);
@@ -167,6 +179,14 @@ function Module.SteepleGrind()
     end;
 end;
 
+function Module.Crash()
+    StampAsset:InvokeServer(56447956, LPlate.CFrame + Vector3.new(40, 15, 0), "{99ab22df-ca29-4143-a2fd-0a1b79db78c2}", {}, 0);
+    for i=1,600 do
+        wait(0.060);
+        StampAsset:InvokeServer(56450197, LPlate.CFrame + Vector3.new(40, 30, 0), "{99ab22df-ca29-4143-a2fd-0a1b79db78c2}", {WV[#WV]}, 0);
+    end;
+end;
+
 UserInputService.InputBegan:Connect(function(InputObject, Proccessed)
     if (Proccessed) then return; end;
     if (InputObject.KeyCode == Enum.KeyCode.F) then
@@ -181,6 +201,8 @@ UserInputService.InputBegan:Connect(function(InputObject, Proccessed)
         Module.SpikeGrind();
     elseif (InputObject.KeyCode == Enum.KeyCode.P) then
         Module.SteepleGrind();
+    elseif (InputObject.KeyCode == Enum.KeyCode.M) then
+        Module.Crash();
     elseif (InputObject.KeyCode == Enum.KeyCode.T) then
         Aura:Destroy();
         Aura = nil;
