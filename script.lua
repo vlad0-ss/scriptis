@@ -17,7 +17,7 @@ textBox.TextScaled = true;
 textBox.ClearTextOnFocus = false;
 textBox.PlaceholderText = "Enter Block ID...";
 textBox.AnchorPoint = Vector2.new(1, 0);
-textBox.Position = UDim2.new(1, -10, 0, 10);
+textBox.Position = UDim2.new(1, -10, 0, 40);
 textBox.Size = UDim2.new(0.25, 0, 0.08, 0);
 
 local uiStroke = Instance.new("UIStroke");
