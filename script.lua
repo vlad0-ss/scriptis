@@ -185,6 +185,10 @@ function Module.Crash()
     end;
 end;
 
+function Module.PlaceSpike()
+    StampAsset:InvokeServer(41324903, LPlate.CFrame + Vector3.new(0, 5, 0), game:GetService("HttpService"):GenerateGUID(true), {LPlayer.Character.HumanoidRootPart}, 0);
+end;
+
 UserInputService.InputBegan:Connect(function(InputObject, Proccessed)
     if (Proccessed) then return; end;
     if (InputObject.KeyCode == Enum.KeyCode.F) then
@@ -200,6 +204,8 @@ UserInputService.InputBegan:Connect(function(InputObject, Proccessed)
     elseif (InputObject.KeyCode == Enum.KeyCode.P) then
         Module.SteepleGrind();
     elseif (InputObject.KeyCode == Enum.KeyCode.M) then
+        Module.Crash();
+    elseif (InputObject.KeyCode == Enum.KeyCode.O) then
         Module.Crash();
     elseif (InputObject.KeyCode == Enum.KeyCode.T) then
         Aura:Destroy();
