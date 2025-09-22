@@ -40,10 +40,10 @@ end);
 ActiveParts.ChildAdded:Connect(function(Block)
     if (Block.Name == "Weathervane") then
         local WVPart = Block:WaitForChild("castleWeathervane"):WaitForChild("castleWeathervaneTop2b");
-        VW[#VW+1] = WVPart;
+        WV[#WV+1] = WVPart;
         Block.AncestryChanged:Wait();
         if (not Block.Parent) then
-            table.remove(VW, table.find(VW, VWPart));
+            table.remove(WV, table.find(WV, VWPart));
         end;
     end;
 end);
