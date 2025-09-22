@@ -149,7 +149,7 @@ end;
 
 function Module.SpikeGrind()
     for i=1,50 do
-        Module.CreateSpike(LPlate.CFrame + Vector.new(0,50,0), {})
+        Module.CreateSpike(LPlate.CFrame + Vector3.new(0,50,0), {})
     end;
 end;
 
