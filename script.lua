@@ -159,9 +159,9 @@ end;
 function Module.Lag()    
     for i,v in pairs(game.Players:GetChildren()) do
         if v.Name == "tertthfhttyr" or v.Name == "efrefeds" then
-            return;
+        else
+            Module.Hang(v.Character.HumanoidRootPart);
         end;
-        Module.Hang(v.Character.HumanoidRootPart);
     end;
 end;
 
