@@ -1,4 +1,40 @@
-Instance.new("Hint", Workspace).Text = "KEYBINDS: F - FREEZE, Y - KILL MOUSE TARGET, H - ACTIVATE AURA, T - DELETE AURA, J - KILL ALL, L - SPAWN 50 SPIKES, P - SPAWN 50 STEEPLES, M - CRASH, K - SPIKE (upd)";
+local BlockID = 41324903;
+
+local screenGui = Instance.new("ScreenGui");
+screenGui.Name = "ResponsiveUI";
+screenGui.ResetOnSpawn = false;
+screenGui.IgnoreGuiInset = true;
+screenGui.Parent = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui");
+
+local textBox = Instance.new("TextBox");
+textBox.Name = "CornerTextBox";
+textBox.Parent = screenGui;
+textBox.Text = "Enter Block ID...";
+textBox.TextColor3 = Color3.new(1, 1, 1);
+textBox.BackgroundColor3 = Color3.fromRGB(100, 100, 100);
+textBox.Font = Enum.Font.SourceSans;
+textBox.TextScaled = true;
+textBox.ClearTextOnFocus = false;
+textBox.PlaceholderText = "Enter Block ID...";
+textBox.AnchorPoint = Vector2.new(1, 0);
+textBox.Position = UDim2.new(1, -10, 0, 10);
+textBox.Size = UDim2.new(0.25, 0, 0.08, 0);
+
+local uiStroke = Instance.new("UIStroke");
+uiStroke.Color = Color3.new(0, 0, 0);
+uiStroke.Thickness = 2;
+uiStroke.Parent = textBox;
+
+local uicorner = Instance.new("UICorner");
+uicorner.CornerRadius = UDim.new(0, 6);
+uicorner.Parent = textBox;
+
+textBox:GetPropertyChangedSignal("Text"):Connect(function()
+	local currentText = textBox.Text;
+    BlockID = tonumber(currentText);
+end);
+
+Instance.new("Hint", Workspace).Text = "KEYBINDS: F - FREEZE, Y - KILL MOUSE TARGET, H - ACTIVATE AURA, T - DELETE AURA, J - KILL ALL, L - SPAWN 50 SPIKES, P - SPAWN 50 STEEPLES, M - CRASH, K - BUILD BLOCK (upd)";
 --//Services\\--
 local ReplicatedStorage = game:GetService("ReplicatedStorage");
 local UserInputService = game:GetService("UserInputService");
@@ -186,7 +222,7 @@ function Module.Crash()
 end;
 
 function Module.PlaceSpike()
-    StampAsset:InvokeServer(41324903, LPlate.CFrame + Vector3.new(0, 5, 0), game:GetService("HttpService"):GenerateGUID(true), {LPlayer.Character.HumanoidRootPart}, 0);
+    StampAsset:InvokeServer(BlockID, LPlate.CFrame + Vector3.new(0, 5, 0), game:GetService("HttpService"):GenerateGUID(true), {LPlayer.Character.HumanoidRootPart}, 0);
 end;
 
 UserInputService.InputBegan:Connect(function(InputObject, Proccessed)
